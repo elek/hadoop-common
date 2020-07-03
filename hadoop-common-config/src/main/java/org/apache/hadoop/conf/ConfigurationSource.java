@@ -211,7 +211,7 @@ public interface ConfigurationSource {
       return defaultValue;
     }
     try {
-      return Class.forName(name);
+      return Class.forName(valueString);
     } catch (ClassNotFoundException e) {
       throw new RuntimeException(e);
     }

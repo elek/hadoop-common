@@ -22,19 +22,24 @@
     <artifactId>hadoop-common-independent</artifactId>
     <version>3.4.0-SNAPSHOT</version>
   </parent>
-  <artifactId>hadoop-common-rpc</artifactId>
+  <artifactId>hadoop-common-example-client</artifactId>
   <version>3.4.0-SNAPSHOT</version>
-  <description>Apache Hadoop Common RPC</description>
-  <name>Apache Hadoop Common RPC</name>
+  <description>Apache Hadoop Common Client Example</description>
+  <name>Apache Hadoop Common Client Example</name>
   <packaging>jar</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common-rpc</artifactId>
+      <version>3.4.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+  </dependencies>
   <build>
-    <extensions>
-      <extension>
-        <groupId>kr.motd.maven</groupId>
-        <artifactId>os-maven-plugin</artifactId>
-        <version>1.5.0.Final</version>
-      </extension>
-    </extensions>
     <plugins>
       <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
@@ -66,7 +71,7 @@
               <tasks>
                 <replace token="com.google.protobuf"
                          value="org.apache.hadoop.thirdparty.protobuf"
-                         dir="target/generated-sources/protobuf/java/org/apache/hadoop/ipc/protobuf">
+                         dir="target/generated-sources/protobuf/java/org/apache/hadoop/common/example">
                 </replace>
               </tasks>
             </configuration>
@@ -78,32 +83,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common-annotations</artifactId>
-      <version>3.4.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common-security</artifactId>
-      <version>3.4.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common-config</artifactId>
-      <version>3.4.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.sun.jersey</groupId>
-      <artifactId>jersey-json</artifactId>
-      <version>1.19</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.9.8</version>
-    </dependency>
-  </dependencies>
 </project>

@@ -73,6 +73,7 @@ import javax.security.auth.spi.LoginModule;
 import org.apache.hadoop.classification.InterfaceAudience;
 import org.apache.hadoop.classification.InterfaceStability;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.conf.ConfigurationFactory;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.retry.ExponentialBackoffRetry;
 import org.apache.hadoop.io.retry.RetryPolicy;
@@ -200,8 +201,7 @@ public class UserGroupInformation {
     if (!isInitialized()) {
       synchronized (UserGroupInformation.class) {
         if (!isInitialized()) { // someone might have beat us
-          throw new IllegalArgumentException("UGI must be initialized first");
-          //initialize(new Configuration(), false);
+          initialize(ConfigurationFactory.newInstance(), false);
         }
       }
     }

@@ -30,12 +30,23 @@
   <modules>
     <!--    <module>hadoop-config</module>-->
     <!--    <module>hadoop-metrics</module>-->
+    <module>hadoop-common-annotations</module>
     <module>hadoop-common-rpc</module>
     <module>hadoop-common-security</module>
     <module>hadoop-common-config</module>
     <module>hadoop-common-metrics</module>
     <module>hadoop-common-util</module>
     <module>hadoop-common-io</module>
+    <module>hadoop-common-example-client</module>
+    <module>hadoop-common-example-server</module>
   </modules>
-
+  <build>
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>1.5.0.Final</version>
+      </extension>
+    </extensions>
+  </build>
 </project>

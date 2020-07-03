@@ -22,31 +22,27 @@
     <artifactId>hadoop-common-independent</artifactId>
     <version>3.4.0-SNAPSHOT</version>
   </parent>
-  <artifactId>hadoop-common-io</artifactId>
+  <artifactId>hadoop-common-example-server</artifactId>
   <version>3.4.0-SNAPSHOT</version>
-  <description>Apache Hadoop Common IO</description>
-  <name>Apache Hadoop Common Common IO</name>
+  <description>Apache Hadoop Common Server Example</description>
+  <name>Apache Hadoop Common Server Example</name>
   <packaging>jar</packaging>
   <dependencies>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common-config</artifactId>
+      <artifactId>hadoop-common-rpc</artifactId>
       <version>3.4.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common-util</artifactId>
+      <artifactId>hadoop-common-example-client</artifactId>
       <version>3.4.0-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common-annotations</artifactId>
-      <version>3.4.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.30</version>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
     </dependency>
   </dependencies>
+
 </project>

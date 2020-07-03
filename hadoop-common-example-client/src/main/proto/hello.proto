@@ -1,0 +1,20 @@
+syntax = "proto2";
+option java_package = "org.apache.hadoop.common.example";
+option java_outer_classname = "HelloWorldProtocolProto";
+option java_generic_services = true;
+option java_generate_equals_and_hash = true;
+package hadoop.ozone;
+
+
+message HelloRequest {
+  required string name = 1;
+}
+
+message HelloResponse {
+  required string response = 1;
+}
+
+service HelloWorldService {
+  rpc submitRequest(HelloRequest)
+      returns(HelloResponse);
+}
